@@ -413,11 +413,13 @@ textarea:focus {
 
 .info-panel {
   display: grid;
-  align-content: space-between;
-  gap: 24px;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-    url("https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85") center / cover;
+  align-content: start;
+  gap: 20px;
+}
+
+.store-info {
+  display: grid;
+  gap: 22px;
 }
 
 .contact-list {
@@ -445,6 +447,54 @@ textarea:focus {
   color: var(--teal);
   background: var(--mint);
   font-weight: 800;
+}
+
+.store-map {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #eef8f3;
+}
+
+.store-map svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 15 / 7;
+  height: auto;
+}
+
+.map-road {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 28;
+  stroke-linecap: round;
+}
+
+.map-road.major {
+  stroke: #d9f2ea;
+  stroke-width: 42;
+}
+
+.map-green {
+  fill: none;
+  stroke: #a7dccb;
+  stroke-width: 18;
+  stroke-linecap: round;
+}
+
+.map-pin {
+  fill: rgba(240, 111, 97, 0.18);
+}
+
+.map-label {
+  fill: var(--ink);
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.map-address {
+  fill: var(--muted);
+  font-size: 22px;
 }
 
 .review-card {

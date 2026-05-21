@@ -250,27 +250,47 @@ export default function Home() {
               </form>
             </div>
             <aside className="info-panel" aria-label="门店信息">
-              <div>
-                <h2>门店信息</h2>
-                <p>
-                  独立猫犬洗护间、可视化美容台、消毒工具一客一换。初次到店建议预留 15
-                  分钟熟悉环境。
-                </p>
+              <div className="store-info">
+                <div>
+                  <h2>门店信息</h2>
+                  <p>
+                    独立猫犬洗护间、可视化美容台、消毒工具一客一换。初次到店建议预留 15
+                    分钟熟悉环境。
+                  </p>
+                </div>
+                <ul className="contact-list">
+                  <li>
+                    <span className="mini-icon">电</span> 400-888-2026
+                  </li>
+                  <li>
+                    <span className="mini-icon">时</span> 周一至周日 10:00-20:00
+                  </li>
+                  <li>
+                    <span className="mini-icon">址</span> 上海市徐汇区宠爱路 66 号
+                  </li>
+                  <li>
+                    <span className="mini-icon">送</span> 3 公里内可预约接送服务
+                  </li>
+                </ul>
               </div>
-              <ul className="contact-list">
-                <li>
-                  <span className="mini-icon">电</span> 400-888-2026
-                </li>
-                <li>
-                  <span className="mini-icon">时</span> 周一至周日 10:00-20:00
-                </li>
-                <li>
-                  <span className="mini-icon">址</span> 上海市徐汇区宠爱路 66 号
-                </li>
-                <li>
-                  <span className="mini-icon">送</span> 3 公里内可预约接送服务
-                </li>
-              </ul>
+              <div className="store-map" aria-label="门店地图">
+                <svg viewBox="0 0 900 420" role="img" aria-label="上海市徐汇区宠爱路 66 号附近地图">
+                  <rect width="900" height="420" fill="#eef8f3" />
+                  <path d="M-20 84 920 15" className="map-road major" />
+                  <path d="M-40 330 920 260" className="map-road major" />
+                  <path d="M160 -20 260 440" className="map-road" />
+                  <path d="M430 -30 390 450" className="map-road" />
+                  <path d="M710 -20 620 450" className="map-road" />
+                  <path d="M-20 190 930 155" className="map-road" />
+                  <path d="M40 390 890 70" className="map-road" />
+                  <path d="M585 150c46 10 72 36 78 77 7 46-20 91-71 118" className="map-green" />
+                  <circle cx="510" cy="205" r="34" className="map-pin" />
+                  <path d="M510 178c19 0 34 15 34 34 0 26-34 64-34 64s-34-38-34-64c0-19 15-34 34-34Z" fill="#f06f61" />
+                  <circle cx="510" cy="212" r="11" fill="#ffffff" />
+                  <text x="548" y="213" className="map-label">门店位置</text>
+                  <text x="536" y="244" className="map-address">徐汇区宠爱路 66 号</text>
+                </svg>
+              </div>
             </aside>
           </div>
         </section>
