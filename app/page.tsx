@@ -50,6 +50,10 @@ const reviews = [
 ];
 
 export default function Home() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowDate = `${tomorrow.getFullYear()}-${String(tomorrow.getMonth() + 1).padStart(2, "0")}-${String(tomorrow.getDate()).padStart(2, "0")}`;
+
   return (
     <>
       <header className="topbar">
@@ -272,11 +276,17 @@ export default function Home() {
                 </label>
                 <label>
                   预约日期
-                  <input type="date" name="date" />
+                  <input type="date" name="date" defaultValue={tomorrowDate} />
                 </label>
                 <label>
                   期望到店时间
-                  <input type="time" name="arrivalTime" min="10:00" max="20:00" />
+                  <input
+                    type="time"
+                    name="arrivalTime"
+                    min="09:00"
+                    max="20:00"
+                    defaultValue="09:00"
+                  />
                 </label>
                 <label>
                   偏好时段
