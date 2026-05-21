@@ -1,3 +1,54 @@
+const reviews = [
+  {
+    name: "安安和奶油",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    text: "我家小狗很怕吹风，美容师会慢慢安抚，洗完毛特别蓬松，回家也没有挠皮肤。",
+  },
+  {
+    name: "阿澈和团子",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    text: "长毛猫开结很细心，没有硬拽，过程还会拍照给我看。价格提前说清楚，很安心。",
+  },
+  {
+    name: "小雪和摩卡",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    text: "造型比我给的参考图更适合它，耳朵和脚脚修得很干净，店里味道也舒服。",
+  },
+  {
+    name: "林女士和豆包",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80",
+    text: "第一次来就把注意事项问得很细，豆包平时紧张，但这次洗完还能在休息区睡着。",
+  },
+  {
+    name: "嘉嘉和可乐",
+    image:
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=200&q=80",
+    text: "接送很准时，到店后会发洗护进度。可乐回来香味很自然，不是那种刺鼻香精味。",
+  },
+  {
+    name: "周先生和乌云",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+    text: "短毛猫也能洗得很细，耳朵和肉垫都处理到了。客服会提醒下一次护理时间，很省心。",
+  },
+  {
+    name: "Mia 和雪球",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+    text: "修剪前会先确认长度和脸型，成品很清爽。雪球回来后拍照特别上镜，家里人都夸。",
+  },
+  {
+    name: "阿南和年糕",
+    image:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    text: "最喜欢他们把猫狗分区，等待区也干净。年糕胆子小，但每次来都比上一次放松。",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -282,46 +333,23 @@ export default function Home() {
               我们会记录每只宠物的性格、敏感点和上次护理情况，下次来店更快进入状态。
             </p>
           </div>
-          <div className="review-grid">
-            <article className="review-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                我家小狗很怕吹风，美容师会慢慢安抚，洗完毛特别蓬松，回家也没有挠皮肤。
-              </p>
-              <div className="reviewer">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
-                  alt="客户头像"
-                />
-                <span>安安和奶油</span>
-              </div>
-            </article>
-            <article className="review-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                长毛猫开结很细心，没有硬拽，过程还会拍照给我看。价格提前说清楚，很安心。
-              </p>
-              <div className="reviewer">
-                <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
-                  alt="客户头像"
-                />
-                <span>阿澈和团子</span>
-              </div>
-            </article>
-            <article className="review-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                造型比我给的参考图更适合它，耳朵和脚脚修得很干净，店里味道也舒服。
-              </p>
-              <div className="reviewer">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
-                  alt="客户头像"
-                />
-                <span>小雪和摩卡</span>
-              </div>
-            </article>
+          <div className="review-carousel" aria-label="客户评价轮播">
+            <div className="review-track">
+              {[...reviews, ...reviews].map((review, index) => (
+                <article
+                  className="review-card"
+                  key={`${review.name}-${index}`}
+                  aria-hidden={index >= reviews.length}
+                >
+                  <div className="stars">★★★★★</div>
+                  <p>{review.text}</p>
+                  <div className="reviewer">
+                    <img src={review.image} alt={`${review.name}的头像`} />
+                    <span>{review.name}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
       </main>
