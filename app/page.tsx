@@ -224,6 +224,10 @@ export default function Home() {
                   <input type="date" name="date" />
                 </label>
                 <label>
+                  期望到店时间
+                  <input type="time" name="arrivalTime" min="10:00" max="20:00" />
+                </label>
+                <label>
                   偏好时段
                   <select name="time" defaultValue="上午 10:00-12:00">
                     <option>上午 10:00-12:00</option>
